@@ -1,0 +1,17 @@
+<%- include("partials/header") -%>
+<h1>Home</h1>
+<p><%= homeStartingContent %></p>
+<% postData.forEach(function(post)
+      { %>
+      <h1><%= post.title%></h1>
+      <p><%= post.content.slice(0,100)+"..."%></p>
+      <img src="<%= post.image %>" alt="wer">
+
+
+      <a href="/posts/<%= post._id%>">Read More</a>
+
+
+      <%
+      }); %>
+      
+<%- include("partials/footer") -%>
