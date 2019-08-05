@@ -83,12 +83,18 @@ app.get("/contact", function(req, res) {
   res.render("contact", {
     contactContent: contactContent
   });
-
 });
 app.get("/compose", function(req, res) {
   res.render("compose");
 
 });
+app.get("/register", function(req,res){
+  res.render("register");
+  });
+  
+  app.get("/login", function(req,res){
+    res.render("login");
+    });
 app.post("/compose", upload.single("postImage"), function(req, res, next) {
   console.log(req.file.path);
   const postData = new Post({
